@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h3= title
+    form(action="", method="post")
+        label(for="email") Email
+        input(type="email" name="email")
+        label(for="password") Password
+        input(type="password" name="password")
+        label(for="confirm-password") Confirm Password
+        input(type="password" name="confirm-password")
+        input(type="submit", value="Sign Up")
+    if errors
+        each error in errors
+            p(style="color:red") #{error.msg}
+    a(href="/") Home
